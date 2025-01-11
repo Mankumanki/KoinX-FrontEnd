@@ -1,8 +1,36 @@
-# React + Vite
+# KoinX FrontEnd
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In the project directory, you can run:
 
-Currently, two official plugins are available:
+Assessment Implementation:
+1) Instead of creating seperate page for coins data based on ID. I have updated the trading View graph by passing the data from the selected trending coin from the Trending Coin Panel.
+2) So now the graph on top will be updated along with coin data on top to the selected trending coin no need to route to seperate page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm run dev
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
+
+The page will reload when you make changes.
+You may also see any lint errors in the console.
+
+npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+Steps To Run:
+
+1) Pull the github repo.
+2) Create .env file inside root folder
+3) Create variable inside it as VITE_GECKO_API_KEY="";
+4) Provide your CoinGeckio API Key for website to access coins data.
+5) type npm run dev on terminal of VS Code to run on localhost.
+
+Deployment:
+
+Deployed on Netlify
+
+
+
