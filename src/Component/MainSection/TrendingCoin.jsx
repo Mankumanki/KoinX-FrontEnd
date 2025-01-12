@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useTrendingContext } from "../../Hooks/useTrendingContext";
 
 function TrendingCoin({}) {
@@ -14,10 +13,11 @@ function TrendingCoin({}) {
           return (
             <a
               role="button"
-              className="flex justify-between"
+              className="flex justify-between hover:bg-slate-200 p-1 rounded-md"
               key={coinVal?.item?.symbol}
               onClick={() => {
                 TrendingContext.setActiveCoin(idx);
+                scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
               <div className="flex self-center gap-2">

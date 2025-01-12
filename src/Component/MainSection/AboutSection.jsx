@@ -32,9 +32,9 @@ function AboutSection() {
         <p className="text-xl font-bold">Already Holding BitCoin?</p>
 
         <div className="flex flex-row gap-10 max-[768px]:flex-col max-[768px]:w-fit max-[768px]:gap-4">
-          <div className="flex bg-blue-400 p-2 gap-2 rounded-md">
+          <div className="flex bg-gradient-to-br from-[#79F1A4] to-[#0E5CAD] p-1 gap-1 rounded-md">
             <img
-              className="w-20 h-full rounded-md self-center"
+              className="w-20 h-full p-1 rounded-md self-center max-[768px]:h-24"
               alt="calculate_profit_img"
               src="https://s3-alpha-sig.figma.com/img/4a59/7cf5/e39cee97d83ba894aa0c105133924b9b?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BIpcdewbeHvpF0MrAHY9Lvoj0pca~n77kDxgd55mI~LL6DhUVkQkiHr5pBEMM7AtTgJ3r50AD5rDtCXdoDGT56v03G1oM0r4wyjQQsqlRn7plrafv4xMISOsNszaNThUXSJrUlWt~XLXr7r86YIkB5PwI3lVDyklbGy~48E2qc86bk25uWBfyp2yk-BGZORYlvmG4DNJRnQ8qtcIJ8nj1kxPzIKT4O676Cdkfd09WRDGFQLhBevRjdipHN7UW6y1LZz651u9k7qWHX-nCLWNBhpwzx4i0aH4FddzREaKCwnmK~DAkruz1qAfUnsFZLCClIobUtEFP58DdJkB8Iyc1A__"
             ></img>
@@ -49,9 +49,9 @@ function AboutSection() {
             </div>
           </div>
 
-          <div className="flex bg-red-400 p-2 gap-2 rounded-md ">
+          <div className="flex bg-gradient-to-br from-[#FF9865] to-[#EF3031] p-1 gap-1 rounded-md ">
             <img
-              className="w-20 h-full rounded-md self-center"
+              className="w-20 h-full p-1 rounded-md self-center max-[768px]:h-24"
               alt="calculate_profit_img"
               src="https://s3-alpha-sig.figma.com/img/b324/e6e3/5c577ca47c764bd8af01d840fe7ffccb?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d4l6utWlIkrTQzqt77v9j0~gF~vbeJRrczq6KNeIyXwZT~GK~Lf~qi4wM95eBzMG3moI5HEb268uf2MKQuKUD6wweZBgLLHTk6QZsDSs8nG7Nz7CiR-h5Iw79zDhEU19rKCbLW~hJ1zjAjS0~-knfUlYgUq6TKJUUkaU0x3gNR0JFYjAUFYU5mGq~tfgaFpijbiNjl5z4AC4OllIoyuSrVGxTQu6~FX2-Fuzr8K3235R65bN7rlrzduhg6fIoYkkdy4zWD2~fnmekMZ5soQX0Vk~S3eDEs8YmPn5A6xFzi~MiO53Xe2K6bBVVtGA-eY-urXUeeYJHhrTlxAmvlSIyA__"
             ></img>

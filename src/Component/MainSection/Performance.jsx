@@ -134,8 +134,8 @@ function Performance() {
                   </svg>
                 </div>
               </div>
-              <div className="lg:flex mb-8">
-                <div className="lg:w-1/2 lg:mr-10 mt-3  ">
+              <div className="flex mb-8 max-[1200px]:flex-col justify-between w-full">
+                <div className="w-1/2 max-[1200px]:w-full lg:mr-10 mt-3  ">
                   <div className="flex justify-between py-5 border-b-2 border-[#D3E0E6]">
                     <div className="text-[#768396] text-sm font-semibold max-[576px]:text-xs">
                       Bitcoin Price
@@ -177,7 +177,8 @@ function Performance() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-1/2 lg:ml-10 lg:mt-3">
+
+                <div className="max-[1200px]:w-full w-1/2 max-[1200px]:m-0 mt-3">
                   <div className="flex justify-between py-5 border-b-2 border-[#D3E0E6]">
                     <div className="text-[#768396] text-sm font-semibold max-[576px]:text-xs">
                       Market Cap
