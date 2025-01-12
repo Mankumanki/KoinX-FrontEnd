@@ -59,53 +59,70 @@ function YouMayLike() {
                 : "200%",
           }}
         >
-          {coins.map((coin) => {
-            return (
-              <div
-                className="flex flex-col gap-2 border w-full border-gray-300 rounded-md p-3 transition-transform delay-100"
-                key={coin?.item?.symbol}
-                style={{
-                  transform: `translateX(calc(${-idx * 100}% - ${idx}*0.5rem))`,
-                }}
-              >
-                <div className="flex gap-2">
-                  <img
-                    className="rounded-full w-8 self-center"
-                    alt={coin?.item?.symbol}
-                    src={coin?.item?.small}
-                  ></img>
-                  <p className="text-sm self-center">{coin?.item?.symbol}</p>
-                  <p
-                    className={`self-center text-center p-1 rounded-md ${
-                      coin?.item?.data?.price_change_percentage_24h.usd >= 0
-                        ? "text-green-500 bg-green-100"
-                        : "text-red-500 bg-red-100"
-                    } text-xs`}
-                  >
-                    {coin?.item?.data?.price_change_percentage_24h.usd >= 0
-                      ? "\u25B2"
-                      : "\u25BC"}{" "}
-                    {coin?.item?.data?.price_change_percentage_24h.usd?.toFixed(
-                      2
-                    )}{" "}
-                    %
+          {coins.length == 0 ? (
+            <Skeleton />
+          ) : (
+            coins.map((coin) => {
+              return (
+                <div
+                  className="flex flex-col gap-2 border w-full border-gray-300 rounded-md p-3 transition-transform delay-100"
+                  key={coin?.item?.symbol}
+                  style={{
+                    transform: `translateX(calc(${
+                      -idx * 100
+                    }% - ${idx}*0.5rem))`,
+                  }}
+                >
+                  <div className="flex gap-2">
+                    <img
+                      className="rounded-full w-8 self-center"
+                      alt={coin?.item?.symbol}
+                      src={coin?.item?.small}
+                    ></img>
+                    <p className="text-sm self-center">{coin?.item?.symbol}</p>
+                    <p
+                      className={`self-center text-center p-1 rounded-md ${
+                        coin?.item?.data?.price_change_percentage_24h.usd >= 0
+                          ? "text-green-500 bg-green-100"
+                          : "text-red-500 bg-red-100"
+                      } text-xs`}
+                    >
+                      {coin?.item?.data?.price_change_percentage_24h.usd >= 0
+                        ? "\u25B2"
+                        : "\u25BC"}{" "}
+                      {coin?.item?.data?.price_change_percentage_24h.usd?.toFixed(
+                        2
+                      )}{" "}
+                      %
+                    </p>
+                  </div>
+                  <p className="font-semibold">
+                    ${coin?.item?.data?.price.toFixed(6)}
                   </p>
+                  <img
+                    className="w-52 self-center px-5"
+                    alt={coin?.item?.name}
+                    src={coin?.item?.data?.sparkline}
+                  ></img>
                 </div>
-                <p className="font-semibold">
-                  ${coin?.item?.data?.price.toFixed(6)}
-                </p>
-                <img
-                  className="w-52 self-center px-5"
-                  alt={coin?.item?.name}
-                  src={coin?.item?.data?.sparkline}
-                ></img>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       </div>
     </section>
   );
 }
 
+function Skeleton() {
+  return (
+    <div className="w-full flex gap-4">
+      <div className="w-72 h-40 bg-slate-200 animate-pulse"></div>
+      <div className="w-72 h-40 bg-slate-200 animate-pulse delay-150"></div>
+      <div className="w-72 h-40 bg-slate-200 animate-pulse delay-200"></div>
+      <div className="w-72 h-40 bg-slate-200 animate-pulse delay-200"></div>
+      <div className="w-72 h-40 bg-slate-200 animate-pulse delay-200"></div>
+    </div>
+  );
+}
 export default YouMayLike;

@@ -12,43 +12,55 @@ function CoinChart() {
   return (
     <section className="w-full">
       <div className="bg-white rounded-md">
-        <div className="flex gap-9 px-4 py-8 max-[476px]:gap-4">
-          <div className="flex gap-2 self-center">
-            <img
-              className="rounded-full w-10 self-center max-[476px]:w-7"
-              src={coinData?.item?.small}
-              alt="Coin Logo"
-            ></img>
-            <p className="self-center font-semibold text-lg max-[476px]:text-sm">
-              {coinData?.item?.name}
-            </p>
-            <p className="text-slate-400 self-center text-xs font-semibold">
-              {coinData?.item?.symbol}
+        {coinData == undefined ? (
+          <Skeleton />
+        ) : (
+          <div className="flex gap-9 px-4 py-8 max-[476px]:gap-4">
+            <div className="flex gap-2 self-center">
+              <img
+                className="rounded-full w-10 self-center max-[476px]:w-7"
+                src={coinData?.item?.small}
+                alt="Coin Logo"
+              ></img>
+              <p className="self-center font-semibold text-lg max-[476px]:text-sm">
+                {coinData?.item?.name}
+              </p>
+              <p className="text-slate-400 self-center text-xs font-semibold">
+                {coinData?.item?.symbol}
+              </p>
+            </div>
+            <p className="self-center text-white bg-gray-500 py-1 px-2 rounded-md text-sm max-[476px]:text-xs">
+              Rank #{coinData?.item?.score + 1}
             </p>
           </div>
-          <p className="self-center text-white bg-gray-500 py-1 px-2 rounded-md text-sm max-[476px]:text-xs">
-            Rank #{coinData?.item?.score + 1}
-          </p>
-        </div>
-        <div className="flex gap-5 px-4 pt-4 pb-6 ">
-          <p className="text-2xl font-semibold self-center max-[476px]:text-xl">
-            {coinData?.item?.data?.market_cap}
-          </p>
-          <p
-            className={`self-center text-center p-1 rounded-md ${
-              coinData?.item?.data?.price_change_percentage_24h.usd >= 0
-                ? "text-green-500 bg-green-100"
-                : "text-red-500 bg-red-100"
-            } text-xs`}
-          >
-            {coinData?.item?.data?.price_change_percentage_24h.usd >= 0
-              ? "\u25B2"
-              : "\u25BC"}{" "}
-            {coinData?.item?.data?.price_change_percentage_24h.usd?.toFixed(2)}{" "}
-            %
-          </p>
-          <p className="text-slate-400 self-center text-xs">(24H)</p>
-        </div>
+        )}
+
+        {coinData == undefined ? (
+          <Skeleton2 />
+        ) : (
+          <div className="flex gap-5 px-4 pt-4 pb-6 ">
+            <p className="text-2xl font-semibold self-center max-[476px]:text-xl">
+              {coinData?.item?.data?.market_cap}
+            </p>
+            <p
+              className={`self-center text-center p-1 rounded-md ${
+                coinData?.item?.data?.price_change_percentage_24h.usd >= 0
+                  ? "text-green-500 bg-green-100"
+                  : "text-red-500 bg-red-100"
+              } text-xs`}
+            >
+              {coinData?.item?.data?.price_change_percentage_24h.usd >= 0
+                ? "\u25B2"
+                : "\u25BC"}{" "}
+              {coinData?.item?.data?.price_change_percentage_24h.usd?.toFixed(
+                2
+              )}{" "}
+              %
+            </p>
+            <p className="text-slate-400 self-center text-xs">(24H)</p>
+          </div>
+        )}
+
         <TradingViewWidget symbol={`MEXC:${coinData?.item?.symbol}USDT`} />
       </div>
       <Performance />
@@ -56,6 +68,23 @@ function CoinChart() {
       <TokenNomics />
       <TeamSection />
     </section>
+  );
+}
+
+function Skeleton() {
+  return (
+    <div className="flex gap-9 px-4 py-8 max-[476px]:gap-4">
+      <div className="w-1/3 h-8 rounded-md bg-slate-200 animate-pulse"></div>
+      <div className="w-20 h-8 px-2 py-1 rounded-md bg-slate-200 animate-pulse delay-75"></div>
+    </div>
+  );
+}
+
+function Skeleton2() {
+  return (
+    <div className="px-4 pt-4 pb-6 ">
+      <div className="w-1/2 h-10 rounded-md bg-slate-200 animate-pulse delay-100"></div>
+    </div>
   );
 }
 
