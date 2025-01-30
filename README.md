@@ -2,7 +2,7 @@
 
 In the project directory, you can run:
 
-Assessment Implementation:
+Implementation:
 1) Instead of creating seperate page for coins data based on ID. I have updated the trading View graph by passing the data from the selected trending coin from the Trending Coin Panel.
 2) So now the graph on top will be updated along with coin data on top to the selected trending coin no need to route to seperate page.
 
